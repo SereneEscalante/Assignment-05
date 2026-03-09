@@ -41,7 +41,7 @@ async function fetchIssues() {
         const res = await fetch(`${API_BASE}/issues`);
         const data = await res.json();
 
-        allIssues = data.data;
+        allIssues = data;
 
         renderIssues(allIssues);
     } catch (error) {
@@ -81,7 +81,7 @@ function renderIssues(issues) {
         const labelsHTML = issue.labels.map(label => {
             const labelLower = label.toLowerCase();
             let iconClass = "fa-solid fa-tag";
-            bgClass = "bg-gray-100 text-gray-600 border-red-200";
+            let bgClass = "bg-gray-100 text-gray-600 border-red-200";
 
             if (labelLower.includes("bug")) {
                iconClass = "fa-solid fa-bug"; 
@@ -89,7 +89,7 @@ function renderIssues(issues) {
             } else if (labelLower.includes("help")) {
                 iconClass = "fa-solid fa-life-ring"; 
                 bgClass = "bg-orange-50 text-orange-600 border-orange-200";
-            } else if (labelLower.includes("documentation")) {
+            } else if (labelLower.includes("documentation") || labelLower.includes("docs")) {
                 iconClass = "fa-solid fa-book"; 
                 bgClass = "bg-blue-50 text-blue-600 border-blue-200";
             } else if (labelLower.includes("enhancement")) {
@@ -185,7 +185,7 @@ async function openIssueModal(id) {
             } else if (labelLower.includes("help")) {
                 iconClass = "fa-solid fa-life-ring";
                 bgClass = "bg-orange-50 text-orange-600 border-orange-200";
-            } else if (labelLower.includes("documentation")) {
+            } else if (labelLower.includes("documentation") || labelLower.includes("docs")) {
                 iconClass = "fa-solid fa-book"; 
                 bgClass = "bg-blue-50 text-blue-600 border-blue-200";
             } else if (labelLower.includes("enhancement")) {
