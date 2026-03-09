@@ -9,6 +9,41 @@
     margin-bottom: 8px;
 }
 
+.status-badge {
+    background: #10B981;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.meta-text {
+    color: #6B7280;
+    font-size: 13px;
+}
+
+.tag {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid;
+}
+
+.tag-bug{
+    color : #EF4444;
+    background: #FEF2F2;
+    border-color: #FEE2E2;
+}
+
+.tag-help{
+    color: #F59E0B;
+    background: #FFFBEB;
+    border-color: #FEF3C7;
+}
+
 .description{
     color: #4B5563;
     font-size: 14px;
