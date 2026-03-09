@@ -27,7 +27,7 @@
 
     <!-- login form -->
     <div id="login-page" class="min-h-screen flex items-center justify-center p-4">
-        <div class="max-w-md w-full border-10 rounded-xl p-10 bg-white shadow-md">
+        <div class="max-w-md w-full rounded-xl p-10 bg-white shadow-md">
             <div class="text-center mb-8">
 
                 <!-- logo -->
@@ -42,16 +42,17 @@
             <form id="login-form" class="space-y-4">
             <div>
                 <label class="block text-sm font-semibold mb-1"></label>
-                <input type="text" id="username" placeholder="Enter Username" class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                <input type="text" id="username" placeholder="Enter Username" class="w-full border p-3 rounded-lg border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
                 <span class="text-xs text-[#4A00FF]">Default:admin</span>
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Password</label>
-                <input type="password" id="password" placeholder="Enter Password" class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                <input type="password" id="password" placeholder="Enter Password" class="w-full border p-3 rounded-lg border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
                 <span class="text-xs text-[#4A00FF]">Default:admin123</span>
             </div>
-            <button type="submit" class="w-full bg-[#4A00FF] text-white py-3 rouded-lg font-bold hover:bg-indigo-700 transition">Sign In</button>
+
+            <button type="submit" class="w-full bg-[#4A00FF] text-white py-3 rounded-lg font-bold hover:bg-indigo-700 transition">Sign In</button>
             </form>
 
             <!-- or part -->
@@ -59,8 +60,12 @@
                 <p class="text-xs text-[#1F2937] mb-4">OR</p>
                 <div class="bg-gray-50 p-4 rounded-lg">
                     <p class="text-xs text-[#64748B]">Demo Credentials:</p>
-                    <p class="text-sm font-bold">Username: admin</p>
-                    <p class="text-sm font-bold">Password: admin123</p>
+                    <p class="text-sm font-bold">Username: 
+                        <span class="text-[#1F2937] font-normal">admin</span>
+                    </p>
+                    <p class="text-sm font-bold">Password: 
+                        <span class="text-[#1F2937] font-normal">admin123</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -71,15 +76,13 @@
     <div id="dashboard" class="hidden">
         <nav class="bg-white border-b px-6 py-3 flex flex-wrap justify-between items-center sticky top-0 z-10">
             <div class="flex items-center gap-2">
-                <i class=""></i>
-                <span></span>
+                <i class="fab fa-github text-2xl"></i>
+                <span class="font-bold text-lg">GitHub Issues Tracker</span>
             </div>
             <div>
                 <div>
                     <!-- ... -->
-                    <div class="flex justify-left mb-4">
-                        <img src="./assets/github-logo.png" alt="" class="w-16 h-16 object-contain">
-                    </div>
+                    <i class="fa fa-search absolute left-3 top-3 text-gray-400"></i>
                     <input type="text" id="search-input" placeholder="Search issues..." class="w-full pl-10 pr-4 py-2 border rounded-lg bg-gray-50 outline-none">
                 </div>
                 <button class="bg-[#4A00FF] text-white px-4 py-2 rounded-lg font-semibold whitespace-nowrap">+ New Issue</button>
@@ -91,8 +94,10 @@
             <div class="max-w-7xl mx-auto p-6">
                 <div class="flex gap-2 mb-8 items-center">
                     <button onclick="filterIssues('all')" id="tab-all" class="tab-btn active-tab px-6 py-2 rounded-lg font-medium border border-transparent transition text-sm"></button>
+
                     <button onclick="filterIssues('open')" id="tab-open" class="tab-btn px-6 py-2 rounded-lg font-medium text-[#64748B] hover:text-[#111827]
                     border border-gray-100 hover:border-gray-200 bg-white transition text-sm">Open</button>
+
                     <button onclick="filterIssues('closed')" id="tab-closed" class="tab-btn px-6 py-2 rounded-lg font-medium text-[#64748B] hover:text-[#111827]
                     border border-gray-100 hover:border-gray-200 bg-white transition text-sm">Closed</button>
                 </div>   
@@ -129,14 +134,14 @@
 
 
     <!-- 3rd part -->
-     <div id="modal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl mx-w-lg w-full p-8 relative shadow-2xl animate-in fade-in zoom-in duration-200">
+    <div id="modal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl">
             <div id="moadl-content"></div>
             <div class="mt-8 flex justify-end">
                 <button onclick="closeModal()" class="bg-[#4A00FF] text-white px-8 py-2 rounded-lg font-bold">Close</button>
             </div>
         </div>
-     </div>
+    </div>
 
 
     <script src="./script.js"></script>
