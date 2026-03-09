@@ -29,8 +29,11 @@
     <div id="login-page" class="min-h-screen flex items-center justify-center p-4">
         <div class="max-w-md w-full border-10 rounded-xl p-10 bg-white shadow-md">
             <div class="text-center mb-8">
+
                 <!-- logo -->
-                <img src="./assets/github-logo.png" alt="" class="w-16 h-16 object-contain">
+                <div class="flex justify-center mb-4">
+                    <img src="./assets/github-logo.png" alt="" class="w-16 h-16 object-contain">
+                </div>
                 <h1 class="font-bold text-[24px]">GitHub Issues Tracker</h1>
                 <p class="text-[#647488] text-[16px]">Sign in to manage your issues</p>
             </div>
@@ -65,27 +68,33 @@
 
 
     <!-- 2nd part -->
-    <div>
-        <nav>
-            <div>
-                <i></i>
+    <div id="dashboard" class="hidden">
+        <nav class="bg-white border-b px-6 py-3 flex flex-wrap justify-between items-center sticky top-0 z-10">
+            <div class="flex items-center gap-2">
+                <i class=""></i>
                 <span></span>
             </div>
             <div>
                 <div>
-                    <i></i>
-                    <input type="text">
+                    <!-- ... -->
+                    <div class="flex justify-left mb-4">
+                        <img src="./assets/github-logo.png" alt="" class="w-16 h-16 object-contain">
+                    </div>
+                    <input type="text" id="search-input" placeholder="Search issues..." class="w-full pl-10 pr-4 py-2 border rounded-lg bg-gray-50 outline-none">
                 </div>
-                <button></button>
+                <button class="bg-[#4A00FF] text-white px-4 py-2 rounded-lg font-semibold whitespace-nowrap">+ New Issue</button>
             </div>
         </nav>
 
-        <main>
-            <div>
-                <div>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+        <!-- all . open . closed -->
+        <main class="max-w-7xl mx-auto p-6">
+            <div class="max-w-7xl mx-auto p-6">
+                <div class="flex gap-2 mb-8 items-center">
+                    <button onclick="filterIssues('all')" id="tab-all" class="tab-btn active-tab px-6 py-2 rounded-lg font-medium border border-transparent transition text-sm"></button>
+                    <button onclick="filterIssues('open')" id="tab-open" class="tab-btn px-6 py-2 rounded-lg font-medium text-[#647488] hover:text-[#111827]
+                    border border-gray-100 hover:border-gray-200 bg-white transition text-sm">Open</button>
+                    <button onclick="filterIssues('closed')" id="tab-closed" class="tab-btn px-6 py-2 rounded-lg font-medium text-[#647488] hover:text-[#111827]
+                    border border-gray-100 hover:border-gray-200 bg-white transition text-sm">Closed</button>
                 </div>   
             </div>
 
