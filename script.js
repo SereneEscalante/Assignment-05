@@ -16,3 +16,19 @@ const modalContent = document.getElementById("modal-content");
 
 
 // login
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const user = document.getElementById("username").value.trim();
+    const pass = document.getElementById("password").value.trim();
+
+    if(user === "admin" && pass === "admin123") {
+        loginPage.classList.add("hidden");
+        dashboard.classList.remove("hidden");
+        fetchIssues();
+    } else {
+        alert("Wrong Credentials");
+    }
+});
+
+//fetching the issues
